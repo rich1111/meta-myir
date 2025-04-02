@@ -33,6 +33,7 @@ do_install(){
 	fi
 	install -m 755 ${WORKDIR}/home/root/u-boot.img ${D}/home/root/mfgimage/kernel_dtb/u-boot.img
 	install -m 755 ${DEPLOY_DIR_IMAGE}/myir-image-full-${MACHINE}.ext4  ${D}/home/root/mfgimage/rootfs-full.ext4
+#	install -m 755 ${DEPLOY_DIR_IMAGE}/myir-image-core-${MACHINE}.ext4  ${D}/home/root/mfgimage/rootfs-full.ext4
 }
 
 

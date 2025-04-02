@@ -23,18 +23,21 @@ KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT} \
 S = "${WORKDIR}/git"
 
 #BRANCH ?= "ti-linux-6.1.y"
-BRANCH ?= "myd-am62x-linux-6.1.46"
+#BRANCH ?= "myd-am62x-linux-6.1.46"
+BRANCH ?= "win-am62x-linux-6.1.46"
 
-SRCREV ?= "4c20dc4003c94a10472fab1e28cefbda5335ab41"
-#SRCREV = "${AUTOREV}"
+#SRCREV ?= "bb9f51b582ffec75f595ce9338b3394ba286be25"
+SRCREV = "${AUTOREV}"
 PV = "6.1.33+git${SRCPV}"
 
 # Append to the MACHINE_KERNEL_PR so that a new SRCREV will cause a rebuild
 MACHINE_KERNEL_PR:append = "b"
 PR = "${MACHINE_KERNEL_PR}"
 
-KERNEL_GIT_URI ?= "git://github.com/MYIR-TI/myir-ti-linux.git"
-KERNEL_GIT_PROTOCOL ?= "https"
+#KERNEL_GIT_URI ?= "git://github.com/MYIR-TI/myir-ti-linux.git"
+KERNEL_GIT_URI ?= "git://${OEBASE}/../myir-ti-linux"
+#KERNEL_GIT_PROTOCOL ?= "https"
+KERNEL_GIT_PROTOCOL ?= "file"
 SRC_URI += "${KERNEL_GIT_URI};protocol=${KERNEL_GIT_PROTOCOL};branch=${BRANCH} \
             file://defconfig"
 
