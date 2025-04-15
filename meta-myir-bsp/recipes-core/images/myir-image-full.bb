@@ -92,4 +92,7 @@ IMAGE_INSTALL += "\
     tslib \
     fbv \
     hwmac \
+   proftpd \
+   openvpn \
+   nginx \
 "
