@@ -29,6 +29,8 @@ IMAGE_INSTALL += "\
     fbv \
     hwmac \
    proftpd \
+   openvpn \
+   nginx \
 "
 
 export IMAGE_BASENAME = "myir-image-core"
