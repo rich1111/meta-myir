@@ -35,7 +35,7 @@ MACHINE_KERNEL_PR:append = "b"
 PR = "${MACHINE_KERNEL_PR}"
 
 #KERNEL_GIT_URI ?= "git://github.com/MYIR-TI/myir-ti-linux.git"
-KERNEL_GIT_URI ?= "https://github.com/rich1111/myir-ti-linux.git"
+KERNEL_GIT_URI ?= "git://github.com/rich1111/myir-ti-linux.git"
 #KERNEL_GIT_URI ?= "git://${OEBASE}/../myir-ti-linux"
 KERNEL_GIT_PROTOCOL ?= "https"
 #KERNEL_GIT_PROTOCOL ?= "file"
