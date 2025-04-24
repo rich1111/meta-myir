@@ -1,0 +1,7 @@
+[Match]
+Name=br0
+
+[Network]
+DHCP=yes
+IPv6AcceptRA=yes
+

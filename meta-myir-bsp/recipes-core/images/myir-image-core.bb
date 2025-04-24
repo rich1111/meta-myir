@@ -31,6 +31,9 @@ IMAGE_INSTALL += "\
    proftpd \
    openvpn \
    nginx \
+   dhclient \
+   dtc \
+   nano \
 "
 
 export IMAGE_BASENAME = "myir-image-core"

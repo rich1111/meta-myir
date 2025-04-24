@@ -1,0 +1,11 @@
+[Unit]
+Description=Set hostname from MAC address
+Before=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/set-rio-hostname.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

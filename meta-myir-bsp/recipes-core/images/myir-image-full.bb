@@ -95,4 +95,7 @@ IMAGE_INSTALL += "\
    proftpd \
    openvpn \
    nginx \
+   dhclient \
+   dtc \
+   nano \
 "

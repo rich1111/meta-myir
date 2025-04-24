@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Basic dhclient-script for embedded systems
+
+case "$1" in
+    up)
+        ip link set "$interface" up
+        ;;
+    down)
+        ip addr flush dev "$interface"
+        ;;
+    bound|renew|rebinding|reboot)
+        ip addr flush dev "$interface"
+        ip addr add "$new_ip_address/$new_subnet_mask" dev "$interface"
+        ip route add default via "$new_routers"
+        ;;
+    EXPIRE|FAIL|RELEASE|STOP)
+        ip addr flush dev ${interface}
+        ;;
+    *)
+        echo "dhclient-script: unknown event '$1'"
+        ;;
+esac
+
+exit 0
+

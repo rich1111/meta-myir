@@ -1,0 +1,8 @@
+[NetDev]
+Name=br0
+Kind=bridge
+
+[Bridge]
+STP=true
+AgeingTimeSec=1s
+
