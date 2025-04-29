@@ -1,0 +1,16 @@
+[Unit]
+Description=Set hostname from MAC address
+After=network.target
+
+[Service]
+Type=oneshot
+# 1) Set your desired timezone first
+ExecStartPre=/usr/bin/timedatectl set-timezone Asia/Taipei
+# 2) Then run your hostname script
+ExecStart=/usr/bin/set-rio-hostname.sh
+# Disable itself after success
+ExecStartPost=/bin/systemctl disable rio-hostname.service
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target

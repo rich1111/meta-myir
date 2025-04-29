@@ -1,0 +1,12 @@
+[Unit]
+Description=DataIO Daemon
+After=multi-user.target
+Wants=multi-user.target
+DefaultDependencies=no
+
+[Service]
+ExecStart=/usr/bin/dataio
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

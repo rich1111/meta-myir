@@ -98,4 +98,7 @@ IMAGE_INSTALL += "\
    dhclient \
    dtc \
    nano \
+   dataio \
+   rio-hostname \
+   tzdata \
 "

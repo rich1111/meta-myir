@@ -34,6 +34,9 @@ IMAGE_INSTALL += "\
    dhclient \
    dtc \
    nano \
+   dataio \
+   rio-hostname \
+   tzdata \
 "
 
 export IMAGE_BASENAME = "myir-image-core"
