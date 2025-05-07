@@ -37,6 +37,7 @@ IMAGE_INSTALL += "\
    dataio \
    rio-hostname \
    tzdata \
+   nftables \
 "
 
 export IMAGE_BASENAME = "myir-image-core"

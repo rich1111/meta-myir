@@ -101,4 +101,5 @@ IMAGE_INSTALL += "\
    dataio \
    rio-hostname \
    tzdata \
+   nftables \
 "
