@@ -102,4 +102,5 @@ IMAGE_INSTALL += "\
    rio-hostname \
    tzdata \
    nftables \
+   syslog-ng \
 "
