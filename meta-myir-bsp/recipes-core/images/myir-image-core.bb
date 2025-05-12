@@ -38,6 +38,7 @@ IMAGE_INSTALL += "\
    rio-hostname \
    tzdata \
    nftables \
+   syslog-ng \
 "
 
 export IMAGE_BASENAME = "myir-image-core"
