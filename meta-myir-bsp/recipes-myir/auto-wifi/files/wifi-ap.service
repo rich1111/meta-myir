@@ -1,0 +1,27 @@
+[Unit]
+Description=Bring up Wi-Fi AP on uap0
+# 1) Ensure the uap0 device exists
+BindsTo=sys-subsystem-net-devices-uap0.device
+After=sys-subsystem-net-devices-uap0.device
+
+# 2) Wait until network-online.target (interface is configured)
+#Wants=network-online.target
+#After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+
+# 3) Start the AP script once interface is ready
+ExecStart=/usr/bin/ifup_wifi_ap
+
+# 4) Stop: tear down AP processes
+ExecStop=/usr/bin/pkill -f hostapd
+ExecStop=/usr/bin/pkill -f udhcpd
+
+# 5) Restart simply re-executes the startup script
+ExecReload=/usr/bin/ifup_wifi_ap
+
+[Install]
+WantedBy=multi-user.target
+
