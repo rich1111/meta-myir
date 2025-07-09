@@ -39,6 +39,7 @@ IMAGE_INSTALL += "\
    tzdata \
    nftables \
    syslog-ng \
+   pru-icss \
 "
 
 export IMAGE_BASENAME = "myir-image-core"

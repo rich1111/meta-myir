@@ -103,4 +103,5 @@ IMAGE_INSTALL += "\
    tzdata \
    nftables \
    syslog-ng \
+   pru-icss \
 "
