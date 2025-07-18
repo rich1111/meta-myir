@@ -4,6 +4,7 @@ LICENSE = "CLOSED"
 PR = "r1"
 
 SRC_URI = "file://dataio \
+           file://dataio_16di \
            file://libCIP.so \
            file://libENET_ENCAP.so \
            file://libNVDATA.so \
@@ -18,6 +19,7 @@ SRC_URI = "file://dataio \
            file://libpn_dev.so \
            file://libprofinet.so \
            file://libserver_rio.so \
+           file://PRU_16DI.out \
            file://dataio.service"
 
 S = "${WORKDIR}"
@@ -25,7 +27,7 @@ S = "${WORKDIR}"
 do_install() {
     # Install the binary
     install -d ${D}${bindir}
-    install -m 0755 ${S}/dataio ${D}${bindir}/dataio
+    install -m 0755 ${S}/dataio_* ${D}${bindir}/
 
     # Install all libraries
     install -d ${D}${libdir}
@@ -33,14 +35,21 @@ do_install() {
 
     # Optional: create symlinks if needed
     ln -s ${D}${libdir}/libopen62541.so ${D}${libdir}/libopen62541.so.1
+    
+    # Install PRU firmware
+    install -d ${D}${nonarch_base_libdir}/firmware
+    install -m 644 ${S}/PRU_*.out \
+                   ${D}${nonarch_base_libdir}/firmware/
+    
 
     # Install the systemd service
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${S}/dataio.service ${D}${systemd_system_unitdir}/dataio.service
 }
 
-FILES:${PN} += "/usr/bin/dataio /usr/lib/*.so /usr/lib/*.so.* ${systemd_system_unitdir}/dataio.service"
+FILES:${PN} += "/usr/bin/dataio_* /usr/lib/*.so /usr/lib/*.so.* /lib/firmware/*.out ${systemd_system_unitdir}/dataio.service"
 INSANE_SKIP:${PN} += "already-stripped"
+INSANE_SKIP:${PN} += "arch"
 RDEPENDS:${PN} += "libssl libcrypto"
 
 # If you want to disable dev package

@@ -24,7 +24,7 @@ S = "${WORKDIR}/git"
 
 #BRANCH ?= "ti-linux-6.1.y"
 #BRANCH ?= "myd-am62x-linux-6.1.46"
-BRANCH ?= "win-am62x-linux-6.1.46"
+BRANCH ?= "win-am62x-linux-6.1.46-16DI16DO"
 
 #SRCREV ?= "bb9f51b582ffec75f595ce9338b3394ba286be25"
 SRCREV = "${AUTOREV}"
