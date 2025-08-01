@@ -5,7 +5,7 @@ Wants=multi-user.target
 DefaultDependencies=no
 
 [Service]
-ExecStart=/usr/bin/dataio_16di
+ExecStart=/usr/bin/dataio_16do
 Restart=always
 
 [Install]

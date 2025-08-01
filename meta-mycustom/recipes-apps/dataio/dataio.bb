@@ -5,6 +5,7 @@ PR = "r1"
 
 SRC_URI = "file://dataio \
            file://dataio_16di \
+           file://dataio_16do \
            file://libCIP.so \
            file://libENET_ENCAP.so \
            file://libNVDATA.so \
@@ -20,6 +21,7 @@ SRC_URI = "file://dataio \
            file://libprofinet.so \
            file://libserver_rio.so \
            file://PRU_16DI.out \
+           file://PRU_16DO.out \
            file://dataio.service"
 
 S = "${WORKDIR}"
